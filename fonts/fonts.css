@@ -1,0 +1,32 @@
+/* =============================================
+   FONTS.CSS — All local, zero internet needed
+   ============================================= */
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('Poppins-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('Poppins-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lora';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('Lora-Variable.ttf') format('truetype');
+}

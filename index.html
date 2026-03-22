@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KKS Suhith Babu — AI Engineer & Backend Builder</title>
+  <meta name="description" content="KKS Suhith Sravan Babu — AI Engineer, Backend Builder, SRM Trichy. Production-grade AI systems and GenAI pipelines." />
+  <!--
+    TOOLS USED IN THIS PROJECT:
+    ─────────────────────────────────────────────
+    HTML5           → Structure & semantic markup
+    CSS3            → Design system, animations, grid/flex layout
+    CSS Custom Props→ Design tokens (colours, spacing, fonts)
+    CSS @keyframes  → Marquee scrolling animations
+    CSS transitions → Hover states, reveal animations
+    CSS Grid        → Section layouts
+    CSS Flexbox     → Component layouts
+    Vanilla JS      → All interactivity (zero frameworks)
+    Canvas API      → All animated visuals (3D cards, charts, orbs)
+    requestAnimFrame→ 60fps render loops
+    IntersectionObs → Scroll-triggered reveal animations
+    CSS perspective → 3D card tilt on mouse
+    Local Fonts     → Poppins (sans) + Lora (serif) — fully offline
+    ─────────────────────────────────────────────
+    NO npm. NO build step. NO frameworks.
+    Just open index.html and it works.
+  -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ CUSTOM CURSOR (dot + lagging ring) ═══
+       CSS sets cursor:none to hide OS arrow.
+       JS moves these elements with mouse events.  -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══ AVAILABILITY BADGE ═══ -->
+  <div class="top-badge">
+    <span class="top-badge__inner">
+      <span class="pulse-dot"></span>
+      Open to AI/ML Internships &amp; Collaborations — 2026
+    </span>
+  </div>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav">
+    <a href="#hero" class="nav__logo">KKS Suhith Babu<span class="dot">.</span></a>
+    <ul class="nav__links">
+      <li><a href="#works">Works</a></li>
+      <li><a href="#services">Skills</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#awards">Recognition</a></li>
+      <li><a href="#contact">Blog</a></li>
+    </ul>
+    <a href="#contact" class="nav__cta">Contact</a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+
+    <div class="hero__trusted">
+      <div class="hero__avatars">
+        <div class="hero__av" style="background:linear-gradient(135deg,#E8441A,#ff9966)">AI</div>
+        <div class="hero__av" style="background:linear-gradient(135deg,#1a6e8e,#4db8d4)">ML</div>
+        <div class="hero__av" style="background:linear-gradient(135deg,#3a1a6e,#9966ff)">BE</div>
+      </div>
+      <span class="hero__trusted-label">AI Engineer · Backend Builder · India</span>
+    </div>
+
+    <h1 class="hero__heading">
+      <span class="line">
+        Building
+        <span class="hero__pill"><canvas id="hc1" width="92" height="70"></canvas></span>
+        <span class="accent">Intelligent</span>
+      </span>
+      <span class="line">
+        <span class="grey">AI</span>
+        <span class="hero__pill"><canvas id="hc2" width="92" height="70"></canvas></span>
+        Systems
+      </span>
+      <span class="line">
+        <span class="grey">based in</span> HYD,
+        <span class="hero__pill"><canvas id="hc3" width="92" height="70"></canvas></span>
+        <span class="accent">India</span>
+      </span>
+    </h1>
+
+    <p class="hero__sub">
+      I build production-grade AI systems, GenAI pipelines, and backend infrastructure — fast, clean, and built to scale.
+    </p>
+
+    <a href="#works" class="hero__btn">
+      View Projects <span class="arrow">→</span>
+    </a>
+
+    <!-- 3D floating project cards — drawn by Canvas API in script.js -->
+    <div class="hero__3d-wrap">
+      <canvas id="hero3d"></canvas>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TECH STACK MARQUEE
+  ════════════════════════════════════════════ -->
+  <div class="tech-marquee">
+    <div style="overflow:hidden">
+      <div class="tech-marquee__track">
+        <span class="tech-marquee__item">Python<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">PyTorch<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">TensorFlow<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">FastAPI<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">LangChain<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">LlamaIndex<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">Pinecone<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">PostgreSQL<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">MongoDB<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">Docker<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">AWS<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">MLflow<span class="tech-marquee__sep">/</span></span>
+        <!-- duplicate for seamless loop -->
+        <span class="tech-marquee__item">Python<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">PyTorch<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">TensorFlow<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">FastAPI<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">LangChain<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">LlamaIndex<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">Pinecone<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">PostgreSQL<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">MongoDB<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">Docker<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">AWS<span class="tech-marquee__sep">/</span></span>
+        <span class="tech-marquee__item">MLflow<span class="tech-marquee__sep">/</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       DIAGONAL RIBBON TICKERS
+       Two banners crossing diagonally — one red,
+       one black — scrolling in opposite directions.
+  ════════════════════════════════════════════ -->
+  <div class="ribbons">
+    <div class="ribbon ribbon--red">
+      <div class="ribbon__inner">
+        <span class="ribbon__item">AI Engineering <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">RAG Pipelines <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">LLM Fine-tuning <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">GenAI Systems <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">FastAPI Backend <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">MLOps <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">AI Engineering <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">RAG Pipelines <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">LLM Fine-tuning <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">GenAI Systems <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">FastAPI Backend <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">MLOps <span class="ribbon__star">✦</span></span>
+      </div>
+    </div>
+    <div class="ribbon ribbon--black">
+      <div class="ribbon__inner">
+        <span class="ribbon__item">B.Tech CSE @ SRM Trichy <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">Graduating 2027 <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">CGPA ~8.0 <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">Open to Internships <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">Chennai, India <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">Production-first Builder <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">B.Tech CSE @ SRM Trichy <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">Graduating 2027 <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">CGPA ~8.0 <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">Open to Internships <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">HYD, India <span class="ribbon__star">✦</span></span>
+        <span class="ribbon__item">Production-first Builder <span class="ribbon__star">✦</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HELLO / INTRO
+  ════════════════════════════════════════════ -->
+  <section class="hello">
+    <span class="hello__label">(hello)</span>
+    <h2 class="hello__heading reveal">
+      I build fast-moving AI systems and backend infrastructure — with clarity, speed, and <span class="grey">no drama.</span>
+    </h2>
+    <div class="hello__pills reveal d1">
+      <span class="hello__pill">🤖 AI Engineering</span>
+      <span class="hello__pill">🔗 GenAI</span>
+      <span class="hello__pill">⚡ FastAPI</span>
+      <span class="hello__pill">📚 RAG Pipelines</span>
+      <span class="hello__pill">🧠 LLMs</span>
+      <span class="hello__pill">🐳 MLOps</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════════════ -->
+  <section class="testimonials">
+    <!-- Ghost watermark text (large faded behind content) -->
+    <div class="ghost-title">Testimonials</div>
+
+    <div class="testimonials__inner">
+      <span class="eyebrow reveal">(Why people love working with KKS Suhith Babu)</span>
+
+      <div class="testimonials__grid reveal">
+
+        <!-- Stats column -->
+        <div class="testi-stats">
+          <div>
+            <div class="testi-stat__num">5+</div>
+            <div class="testi-stat__label">Projects Shipped</div>
+          </div>
+          <div>
+            <div class="testi-stat__num">100%</div>
+            <div class="testi-stat__label">Production mindset</div>
+          </div>
+          <div>
+            <div class="testi-stat__num">2027</div>
+            <div class="testi-stat__label">Full-time ready</div>
+          </div>
+        </div>
+
+        <!-- Carousel column -->
+        <div>
+          <div class="testi-carousel__outer">
+            <div class="testi-carousel__track" id="testiTrack">
+
+              <div class="testi-slide">
+                <canvas id="tc1"></canvas>
+                <div class="testi-slide__body">
+                  <div class="testi-slide__num">01 / 03</div>
+                  <div class="testi-slide__quote">"ClinicalMind shows a rare blend of empathy and engineering — building AI for real-world rural impact, not just demos."</div>
+                  <div>
+                    <span class="testi-slide__name">Prof. K. Ramesh</span>
+                    <span class="testi-slide__role">Faculty Mentor · SRM Trichy</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testi-slide">
+                <canvas id="tc2"></canvas>
+                <div class="testi-slide__body">
+                  <div class="testi-slide__num">02 / 03</div>
+                  <div class="testi-slide__quote">"The LLM fine-tuning pipeline was production-level — proper MLflow tracking, LoRA adapters, clean API design. Not student work."</div>
+                  <div>
+                    <span class="testi-slide__name">Aakash Mehta</span>
+                    <span class="testi-slide__role">Senior ML Engineer · Bangalore</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testi-slide">
+                <canvas id="tc3"></canvas>
+                <div class="testi-slide__body">
+                  <div class="testi-slide__num">03 / 03</div>
+                  <div class="testi-slide__quote">"His approach: ship fast, iterate faster. The risk predictor dashboard was clean and production-ready within days."</div>
+                  <div>
+                    <span class="testi-slide__name">Priya Nair</span>
+                    <span class="testi-slide__role">Startup Founder · Chennai</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="testi-nav">
+            <button class="nav-btn" id="tPrev">←</button>
+            <button class="nav-btn" id="tNext">→</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       RECENT WORKS
+  ════════════════════════════════════════════ -->
+  <section class="works" id="works">
+    <span class="works__ghost">(Why clients love KKS Suhith Babu)</span>
+    <div style="font-size:clamp(68px,11vw,148px);font-weight:700;color:rgba(0,0,0,.05);white-space:nowrap;line-height:1.1;letter-spacing:-.03em;padding:0 40px;display:block;margin-bottom:-6px;pointer-events:none;">Recent Works</div>
+
+    <div class="works__carousel">
+      <div class="works__track" id="worksTrack">
+
+        <!-- WORK 1 -->
+        <div class="work-card">
+          <div class="work-card__left">
+            <p class="work-card__desc">Building AI that works under real-world constraints — multilingual, offline, deployed for impact.</p>
+            <div>
+              <div class="work-card__num">01 / 05</div>
+              <div class="work-card__name">ClinicalMind</div>
+            </div>
+          </div>
+          <div class="work-card__visual"><canvas id="wc1"></canvas></div>
+          <div class="work-card__meta">
+            <div class="meta-group"><label>YEAR</label><div class="big">2025</div></div>
+            <div class="meta-group"><label>ROLE</label><div class="sm">Sole Builder</div></div>
+            <div class="meta-group">
+              <label>TECH STACK</label>
+              <ul>
+                <li>FastAPI + GPT-4o Vision</li>
+                <li>LlamaIndex + Pinecone</li>
+                <li>Whisper ASR</li>
+                <li>React PWA (Offline-first)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- WORK 2 -->
+        <div class="work-card">
+          <div class="work-card__left">
+            <p class="work-card__desc">ML-powered risk prediction with a full production stack — JWT auth, dashboards, and explainability.</p>
+            <div>
+              <div class="work-card__num">02 / 05</div>
+              <div class="work-card__name">AI Risk Predictor</div>
+            </div>
+          </div>
+          <div class="work-card__visual"><canvas id="wc2"></canvas></div>
+          <div class="work-card__meta">
+            <div class="meta-group"><label>YEAR</label><div class="big">2025</div></div>
+            <div class="meta-group"><label>ROLE</label><div class="sm">Full-Stack ML Engineer</div></div>
+            <div class="meta-group">
+              <label>TECH STACK</label>
+              <ul>
+                <li>Random Forest + XGBoost</li>
+                <li>FastAPI + JWT Auth</li>
+                <li>React + Recharts</li>
+                <li>PostgreSQL</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- WORK 3 -->
+        <div class="work-card">
+          <div class="work-card__left">
+            <p class="work-card__desc">Scalable LLM fine-tuning infrastructure with LoRA, experiment tracking, and versioned serving endpoints.</p>
+            <div>
+              <div class="work-card__num">03 / 05</div>
+              <div class="work-card__name">LLM Pipeline</div>
+            </div>
+          </div>
+          <div class="work-card__visual"><canvas id="wc3"></canvas></div>
+          <div class="work-card__meta">
+            <div class="meta-group"><label>YEAR</label><div class="big">2024</div></div>
+            <div class="meta-group"><label>ROLE</label><div class="sm">ML Engineer</div></div>
+            <div class="meta-group">
+              <label>TECH STACK</label>
+              <ul>
+                <li>PyTorch + LoRA/QLoRA</li>
+                <li>MLflow Tracking</li>
+                <li>Hugging Face Hub</li>
+                <li>Docker + AWS EC2</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- WORK 4 -->
+        <div class="work-card">
+          <div class="work-card__left">
+            <p class="work-card__desc">Conversational AI interview coach with real-time STAR scoring, voice mode, and adaptive difficulty.</p>
+            <div>
+              <div class="work-card__num">04 / 05</div>
+              <div class="work-card__name">AI Mock Interviewer</div>
+            </div>
+          </div>
+          <div class="work-card__visual"><canvas id="wc4"></canvas></div>
+          <div class="work-card__meta">
+            <div class="meta-group"><label>YEAR</label><div class="big">2024</div></div>
+            <div class="meta-group"><label>ROLE</label><div class="sm">AI Builder</div></div>
+            <div class="meta-group">
+              <label>TECH STACK</label>
+              <ul>
+                <li>LangChain + GPT-4o</li>
+                <li>Whisper + TTS</li>
+                <li>FastAPI + React</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- WORK 5 -->
+        <div class="work-card">
+          <div class="work-card__left">
+            <p class="work-card__desc">Computer vision + ML for intelligent traffic signal management with real-time density analysis.</p>
+            <div>
+              <div class="work-card__num">05 / 05</div>
+              <div class="work-card__name">Smart Traffic AI</div>
+            </div>
+          </div>
+          <div class="work-card__visual"><canvas id="wc5"></canvas></div>
+          <div class="work-card__meta">
+            <div class="meta-group"><label>YEAR</label><div class="big">2024</div></div>
+            <div class="meta-group"><label>ROLE</label><div class="sm">ML Engineer</div></div>
+            <div class="meta-group">
+              <label>TECH STACK</label>
+              <ul>
+                <li>YOLOv8 + OpenCV</li>
+                <li>Scikit-learn + Pandas</li>
+                <li>FastAPI Dashboard</li>
+                <li>NumPy Analytics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="works__nav">
+      <button class="nav-btn" id="wPrev">←</button>
+      <button class="nav-btn" id="wNext">→</button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES / SKILLS
+  ════════════════════════════════════════════ -->
+  <section class="services" id="services">
+    <h2 class="services__title reveal">What I do</h2>
+
+    <div class="svc-tabs reveal">
+      <button class="svc-tab active" onclick="switchTab(this,'svc1')">
+        <span class="svc-tab__dot"></span>AI Engineering
+      </button>
+      <button class="svc-tab" onclick="switchTab(this,'svc2')">
+        <span class="svc-tab__dot"></span>Backend Systems
+      </button>
+      <button class="svc-tab" onclick="switchTab(this,'svc3')">
+        <span class="svc-tab__dot"></span>MLOps
+      </button>
+    </div>
+
+    <div class="svc-panel active" id="svc1">
+      <div class="svc-panel__bg-text">AI Engineering × AI Engineering × AI Engineering ×</div>
+      <div class="svc-panel__content">
+        <div>
+          <h3 class="svc-panel__heading">AI Engineering</h3>
+          <p class="svc-panel__desc">Building intelligent systems from RAG pipelines to multimodal AI apps — using LangChain, LlamaIndex, GPT-4o Vision, Whisper, and fine-tuned models for production use cases.</p>
+          <ul class="svc-panel__list">
+            <li>RAG Pipelines with LlamaIndex &amp; Pinecone</li>
+            <li>LLM Fine-tuning (LoRA, QLoRA, PEFT)</li>
+            <li>Multimodal AI — Vision + Audio + Text</li>
+            <li>Conversational AI &amp; Agentic Systems</li>
+            <li>Vector Search &amp; Semantic Retrieval</li>
+          </ul>
+          <div class="svc-panel__tags">
+            <span class="svc-tag">LangChain</span>
+            <span class="svc-tag">LlamaIndex</span>
+            <span class="svc-tag">GPT-4o</span>
+          </div>
+        </div>
+        <div class="svc-panel__visual"><canvas id="sc1"></canvas></div>
+      </div>
+    </div>
+
+    <div class="svc-panel" id="svc2">
+      <div class="svc-panel__bg-text">Backend × Backend × Backend × Backend ×</div>
+      <div class="svc-panel__content">
+        <div>
+          <h3 class="svc-panel__heading">Backend Engineering</h3>
+          <p class="svc-panel__desc">Designing scalable Python-first backend systems with FastAPI — from JWT auth and REST APIs to PostgreSQL, MongoDB, async workflows, and containerised deployments.</p>
+          <ul class="svc-panel__list">
+            <li>FastAPI REST APIs with Async Support</li>
+            <li>PostgreSQL + MongoDB Database Design</li>
+            <li>JWT Authentication &amp; RBAC</li>
+            <li>Docker Containerisation</li>
+            <li>AWS EC2, S3, Lambda Deployments</li>
+          </ul>
+          <div class="svc-panel__tags">
+            <span class="svc-tag">FastAPI</span>
+            <span class="svc-tag">PostgreSQL</span>
+            <span class="svc-tag">Docker</span>
+          </div>
+        </div>
+        <div class="svc-panel__visual"><canvas id="sc2"></canvas></div>
+      </div>
+    </div>
+
+    <div class="svc-panel" id="svc3">
+      <div class="svc-panel__bg-text">MLOps × MLOps × MLOps × MLOps ×</div>
+      <div class="svc-panel__content">
+        <div>
+          <h3 class="svc-panel__heading">MLOps &amp; ML Engineering</h3>
+          <p class="svc-panel__desc">End-to-end ML lifecycle — from data pipelines and experiment tracking to model versioning, performance monitoring, and CI/CD for ML systems.</p>
+          <ul class="svc-panel__list">
+            <li>Experiment Tracking with MLflow</li>
+            <li>Scikit-learn, XGBoost, PyTorch Pipelines</li>
+            <li>Model Versioning &amp; A/B Testing</li>
+            <li>Feature Engineering — Pandas &amp; NumPy</li>
+            <li>Computer Vision with YOLOv8 &amp; OpenCV</li>
+          </ul>
+          <div class="svc-panel__tags">
+            <span class="svc-tag">MLflow</span>
+            <span class="svc-tag">PyTorch</span>
+            <span class="svc-tag">YOLOv8</span>
+          </div>
+        </div>
+        <div class="svc-panel__visual"><canvas id="sc3"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MEET SUHITH
+  ════════════════════════════════════════════ -->
+  <section class="meet" id="about">
+    <span class="meet__ghost">Meet KKS Suhith Babu</span>
+    <div class="meet__grid">
+
+      <div class="meet__photo reveal">
+        <canvas id="meetCanvas"></canvas>
+        <div class="meet__photo-socials">
+          <a href="#" class="social-icon">𝕏</a>
+          <a href="#" class="social-icon">in</a>
+          <a href="#" class="social-icon">gh</a>
+        </div>
+        <div class="meet__badge">
+          <div class="meet__badge-text">
+            <span style="font-size:18px">⚡</span>
+            <span>SINCE</span>
+            <span>2023</span>
+            <span>BUILDER</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d1">
+        <span class="meet__subtitle">The Builder</span>
+        <h2 class="meet__name">KKS Suhith Babu</h2>
+        <p class="meet__bio">
+          Kocherla Koteswara Suhith Sravan Babu is a B.Tech CSE student at SRM Institute of Science and Technology, Trichy (graduating 2027), building a career as an AI Engineer with strong backend engineering skills. He works at the intersection of intelligent systems and production-grade software — from RAG pipelines and LLM fine-tuning to FastAPI backends and MLOps infrastructure.
+          <br><br>
+          Approach: ship fast, build clean, iterate relentlessly.
+        </p>
+        <div class="timeline">
+          <div class="timeline__row">
+            <div><div class="timeline__role">Founder · ClinicalMind AI</div><div class="timeline__org">AI Diagnostic Co-pilot for Rural Healthcare, India</div></div>
+            <div class="timeline__year">2025–Now</div>
+          </div>
+          <div class="timeline__row">
+            <div><div class="timeline__role">Builder · LLM Fine-tuning Pipeline</div><div class="timeline__org">Scalable Training Infrastructure — Self-built</div></div>
+            <div class="timeline__year">2025</div>
+          </div>
+          <div class="timeline__row">
+            <div><div class="timeline__role">Full-Stack ML · AI Risk Predictor</div><div class="timeline__org">FastAPI + React + ML Dashboard System</div></div>
+            <div class="timeline__year">2025</div>
+          </div>
+          <div class="timeline__row">
+            <div><div class="timeline__role">B.Tech CSE · SRM Trichy</div><div class="timeline__org">Computer Science &amp; Engineering · CGPA ~8.0</div></div>
+            <div class="timeline__year">2023–2027</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       AWARDS / CERTIFICATIONS
+  ════════════════════════════════════════════ -->
+  <section class="awards" id="awards">
+    <span class="eyebrow">(Awards)</span>
+    <h2 class="awards__title reveal">Awards Winning</h2>
+    <div class="awards__list">
+
+      <div class="award-row reveal">
+        <div class="award-row__platform">Coursera</div>
+        <div>
+          <div class="award-row__title">Deep Learning Specialization</div>
+          <div class="award-row__sub">Neural Networks, CNNs, RNNs — Andrew Ng</div>
+        </div>
+        <div class="award-row__arrow">↗</div>
+        <div class="award-row__pill">↗</div>
+      </div>
+
+      <div class="award-row reveal d1">
+        <div class="award-row__platform">Hugging Face</div>
+        <div>
+          <div class="award-row__title">NLP with Transformers</div>
+          <div class="award-row__sub">BERT, GPT, T5 Fine-tuning &amp; Deployment</div>
+        </div>
+        <div class="award-row__arrow">↗</div>
+        <div class="award-row__pill">↗</div>
+      </div>
+
+      <div class="award-row reveal d2">
+        <div class="award-row__platform">AWS</div>
+        <div>
+          <div class="award-row__title">Cloud Practitioner Foundation</div>
+          <div class="award-row__sub">EC2, S3, Lambda, RDS, IAM Fundamentals</div>
+        </div>
+        <div class="award-row__arrow">↗</div>
+        <div class="award-row__pill">↗</div>
+      </div>
+
+      <div class="award-row reveal d3">
+        <div class="award-row__platform">GitHub</div>
+        <div>
+          <div class="award-row__title">Open Source Contributions</div>
+          <div class="award-row__sub">AI Tools, FastAPI Extensions &amp; ML Utilities</div>
+        </div>
+        <div class="award-row__arrow">↗</div>
+        <div class="award-row__pill">↗</div>
+      </div>
+
+      <div class="award-row reveal">
+        <div class="award-row__platform">SRM Trichy</div>
+        <div>
+          <div class="award-row__title">B.Tech CSE · CGPA 8.0+</div>
+          <div class="award-row__sub">Computer Science &amp; Engineering · Class of 2027</div>
+        </div>
+        <div class="award-row__arrow">↗</div>
+        <div class="award-row__pill">↗</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PRICING / COLLABORATION
+  ════════════════════════════════════════════ -->
+  <section class="pricing" id="pricing">
+    <span class="eyebrow pricing__eyebrow">(Collaboration)</span>
+    <h2 class="pricing__title reveal">Explore Options</h2>
+    <div class="pricing__stack">
+
+      <div class="price-card reveal">
+        <div>
+          <div class="price-card__icon">⚡</div>
+          <div class="price-card__name">Internship / Contract</div>
+          <p class="price-card__desc">Ideal for startups or teams needing an AI/Backend engineer for a sprint, POC, or feature build.</p>
+          <div class="price-card__delivery"><span>Duration</span><span>1–3 months</span></div>
+        </div>
+        <div class="price-card__right">
+          <div class="price-card__amount">Free</div>
+          <span class="price-card__period">Actively seeking stipend / unpaid internships</span>
+          <ul class="price-card__features">
+            <li>AI/ML model development</li>
+            <li>FastAPI backend APIs</li>
+            <li>RAG pipeline setup</li>
+          </ul>
+          <a href="#contact" class="price-card__cta price-card__cta--dark">Get In Touch →</a>
+        </div>
+      </div>
+
+      <div class="price-card price-card--dark reveal d1">
+        <div>
+          <div class="price-card__icon">🎯</div>
+          <div class="price-card__name">Full-time · 2027</div>
+          <p class="price-card__desc">Targeting full-time AI/ML engineering positions post-graduation — production systems, LLMOps, backend-strong roles.</p>
+          <div class="price-card__delivery"><span>Available</span><span>June 2027</span></div>
+        </div>
+        <div class="price-card__right">
+          <div style="font-size:16px;color:rgba(255,255,255,.4);margin-bottom:6px">Starting at</div>
+          <div class="price-card__amount price-card__amount--accent">Full-time</div>
+          <span class="price-card__period">AI Engineer role — India</span>
+          <ul class="price-card__features">
+            <li>GenAI &amp; LLM systems at scale</li>
+            <li>MLOps pipeline engineering</li>
+            <li>Python-first backend architecture</li>
+          </ul>
+          <a href="#contact" class="price-card__cta price-card__cta--ghost">Connect Early →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ
+  ════════════════════════════════════════════ -->
+  <section class="faq">
+    <span class="eyebrow">(FAQs)</span>
+    <h2 class="faq__title reveal">Your Questions, Answered</h2>
+    <p class="faq__sub reveal">Everything you need to know about working with Suhith.</p>
+
+    <div class="faq__grid">
+      <div>
+        <div class="faq-item reveal">
+          <button class="faq-item__btn" onclick="toggleFaq(this)">
+            What's your core tech stack?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer"><p>Python-first: FastAPI, PyTorch/TensorFlow, LangChain/LlamaIndex, Pinecone, PostgreSQL/MongoDB, Docker, AWS, MLflow, and React/TypeScript for dashboards.</p></div>
+        </div>
+        <div class="faq-item open reveal d1">
+          <button class="faq-item__btn" onclick="toggleFaq(this)">
+            Available for internships now?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer"><p>Yes! Actively seeking AI/ML or Backend internships for 2025–2026. Open to remote, hybrid, or on-site roles in India. Reach out below.</p></div>
+        </div>
+        <div class="faq-item reveal d2">
+          <button class="faq-item__btn" onclick="toggleFaq(this)">
+            What kind of projects do you build?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer"><p>Production-grade AI systems — RAG pipelines, fine-tuned LLMs, computer vision apps, FastAPI backends, and full-stack ML dashboards that work in the real world.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="faq-item reveal">
+          <button class="faq-item__btn" onclick="toggleFaq(this)">
+            How fast can you deliver?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer"><p>POCs in 1–2 weeks. Production systems in 4–8 weeks. I move fast, iterate quickly, and communicate clearly throughout.</p></div>
+        </div>
+        <div class="faq-item reveal d1">
+          <button class="faq-item__btn" onclick="toggleFaq(this)">
+            Open to open-source collaboration?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer"><p>Absolutely. I'm open to collaborating on AI tools, developer utilities, and backend infrastructure projects. Find me on GitHub or via the form below.</p></div>
+        </div>
+        <div class="faq-item reveal d2">
+          <button class="faq-item__btn" onclick="toggleFaq(this)">
+            What's your long-term goal?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer"><p>Becoming a senior AI Engineer at a top-tier tech company or AI-first startup in India. Building toward this through real projects, not just coursework.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <span class="contact__ghost">Let's Connect</span>
+
+    <div class="contact__card reveal">
+      <div class="contact__left">
+        <!-- Canvas drawn by contactCanvas() in script.js -->
+        <canvas id="contactBgCanvas"></canvas>
+        <div class="contact__left-blur"></div>
+        <div class="contact__left-text">
+          <h2>Got a project<br>in mind?</h2>
+          <p>Let's make something intelligent happen together</p>
+        </div>
+      </div>
+      <div class="contact__right">
+        <h3>Send a Message</h3>
+        <p class="sub">I respond within 24 hours, usually faster.</p>
+        <div class="form-group">
+          <label class="form-label">YOUR NAME</label>
+          <input class="form-input" type="text" placeholder="e.g. Priya Sharma" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">YOUR EMAIL</label>
+          <input class="form-input" type="email" placeholder="you@company.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">MESSAGE</label>
+          <textarea class="form-textarea" placeholder="Tell me about the project, role, or idea..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm(this)">Send Now!</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EMAIL TICKER ═══ -->
+  <div class="email-ticker">
+    <div class="email-ticker__track">
+      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
+      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
+      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
+      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
+      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
+      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
+      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
+      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="footer">
+    <!-- Radial red gradient — exact Agero footer style -->
+    <div class="footer__grad"></div>
+
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">KKS Suhith Babu<span class="dot">.</span></div>
+        <p class="footer__brand-desc">AI Engineer &amp; Backend Builder based in HYD, India. Building production-grade AI systems.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#services">Skills</a></li>
+          <li><a href="#awards">Recognition</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#">Twitter(X)</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legals</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 KKS Suhith Babu. All rights reserved.</p>
+      <div class="footer__clock">HYD → <span id="footerClock">00:00:00</span></div>
+      <a href="#hero" class="footer__top">Back to top ↑</a>
+    </div>
+
+    <!-- Giant outlined name at the very bottom -->
+    <span class="footer__wordmark">KKS Suhith Babu</span>
+  </footer>
+
+  <!-- Script loaded at end so DOM is ready -->
+  <script src="script.js"></script>
+
+</body>
+</html>
