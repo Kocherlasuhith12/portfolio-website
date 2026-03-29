@@ -9,7 +9,7 @@
 \____/
 ```
 
-# Suhith — AI Engineer Portfolio
+#KKS Suhith Babu — AI Engineer Portfolio
 
 **A production-grade personal portfolio website**
 *Inspired by [agero.framer.website](https://agero.framer.website/) · Built with pure HTML, CSS & JavaScript*
