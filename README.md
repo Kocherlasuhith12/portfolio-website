@@ -72,8 +72,8 @@
 ├─────────────────────────────────────────────────────────────────┤
 │ Python / PyTorch / TensorFlow / FastAPI / LangChain / MLflow... │
 ├─────────────────────────────────────────────────────────────────┤
-│ ████ AI Engineering × RAG Pipelines × LLM Fine-tuning × MLOps  │
-│ ████ B.Tech CSE @ SRM Trichy × Graduating 2027 × Open to Work  │
+│ ████ AI Engineering × RAG Pipelines × LLM Fine-tuning × MLOps   │
+│ ████ B.Tech CSE @ SRM Trichy × Graduating 2027 × Open to Work   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
