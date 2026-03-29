@@ -536,6 +536,6 @@ Key design patterns taken from the reference and adapted:
 
 **Built with 0 dependencies · Works offline · Opens in any browser**
 
-*© 2025 KKS Suhith Babu. All rights reserved.*
+*© 2026 KKS Suhith Babu. All rights reserved.*
 
 </div>
