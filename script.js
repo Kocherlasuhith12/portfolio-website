@@ -3,7 +3,7 @@
    
    TOOLS USED (all vanilla, zero npm needed):
    - Canvas API     → all animated visuals / 3D floating cards
-   - requestAnimationFrame → smooth 60fps render loops
+   - requestAnimationFrame → smooth 60fps render loops 
    - IntersectionObserver  → scroll-triggered reveal
    - CSS custom properties → design tokens read from :root
    - Web Animations API    → subtle entrance transitions
