@@ -8,7 +8,7 @@
    - CSS custom properties → design tokens read from :root
    - Web Animations API    → subtle entrance transitions
     
-   WHAT THIS FILE DOES:
+   WHAT THIS FILE DOES: 
    1.  Custom cursor  (dot + lagging ring, hides OS cursor)
    2.  Hero pill canvases (3 inline animated icons in heading)
    3.  Hero 3D floating project cards (canvas, mouse-parallax)
