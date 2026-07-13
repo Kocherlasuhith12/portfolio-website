@@ -1,838 +1,336 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KKS Suhith Babu — AI Engineer & Backend Builder</title>
-  <meta name="description" content="KKS Suhith Sravan Babu — AI Engineer, Backend Builder, SRM Trichy. Production-grade AI systems and GenAI pipelines." />
-  <!--
-    TOOLS USED IN THIS PROJECT:
-    ─────────────────────────────────────────────
-    HTML5           → Structure & semantic markup
-    CSS3            → Design system, animations, grid/flex layout
-    CSS Custom Props→ Design tokens (colours, spacing, fonts)
-    CSS @keyframes  → Marquee scrolling animations
-    CSS transitions → Hover states, reveal animations
-    CSS Grid        → Section layouts
-    CSS Flexbox     → Component layouts
-    Vanilla JS      → All interactivity (zero frameworks)
-    Canvas API      → All animated visuals (3D cards, charts, orbs)
-    requestAnimFrame→ 60fps render loops
-    IntersectionObs → Scroll-triggered reveal animations
-    CSS perspective → 3D card tilt on mouse
-    Local Fonts     → Poppins (sans) + Lora (serif) — fully offline
-    ─────────────────────────────────────────────
-    NO npm. NO build step. NO frameworks.
-    Just open index.html and it works.
-  -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KKS Suhith Babu | AI Engineer Intern and Backend Developer</title>
+  <meta name="description" content="Portfolio of KKS Suhith Babu, an AI Engineer Intern at BitApps and Computer Science undergraduate building practical AI applications, backend systems, model-evaluation tools and automation workflows.">
+  <meta name="theme-color" content="#f3efe7">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KKS Suhith Babu | AI Engineer Intern and Backend Developer">
+  <meta property="og:description" content="AI Engineer Intern at BitApps building practical AI systems, reliable backend services and developer-focused tools.">
+  <meta property="og:image" content="og-preview.svg">
+  <meta property="og:image:alt" content="Portfolio preview for KKS Suhith Babu, AI Engineer Intern and Backend Developer">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>document.documentElement.className = 'js';</script>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ═══ CUSTOM CURSOR (dot + lagging ring) ═══
-       CSS sets cursor:none to hide OS arrow.
-       JS moves these elements with mouse events.  -->
-  <div id="cursor-dot"></div>
-  <div id="cursor-ring"></div>
-
-  <!-- ═══ AVAILABILITY BADGE ═══ -->
-  <div class="top-badge">
-    <span class="top-badge__inner">
-      <span class="pulse-dot"></span>
-      Open to AI/ML Internships &amp; Collaborations — 2026
-    </span>
-  </div>
-
-  <!-- ═══ NAVIGATION ═══ -->
-  <nav class="nav">
-    <a href="#hero" class="nav__logo">KKS Suhith Babu<span class="dot">.</span></a>
-    <ul class="nav__links">
-      <li><a href="#works">Works</a></li>
-      <li><a href="#services">Skills</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#awards">Recognition</a></li>
-      <li><a href="#contact">Blog</a></li>
-    </ul>
-    <a href="#contact" class="nav__cta">Contact</a>
-  </nav>
-
-  <!-- ═══════════════════════════════════════════
-       HERO
-  ════════════════════════════════════════════ -->
-  <section class="hero" id="hero">
-
-    <div class="hero__trusted">
-      <div class="hero__avatars">
-        <div class="hero__av" style="background:linear-gradient(135deg,#E8441A,#ff9966)">AI</div>
-        <div class="hero__av" style="background:linear-gradient(135deg,#1a6e8e,#4db8d4)">ML</div>
-        <div class="hero__av" style="background:linear-gradient(135deg,#3a1a6e,#9966ff)">BE</div>
-      </div>
-      <span class="hero__trusted-label">AI Engineer · Backend Builder · India</span>
-    </div>
-
-    <h1 class="hero__heading">
-      <span class="line">
-        Building
-        <span class="hero__pill"><canvas id="hc1" width="92" height="70"></canvas></span>
-        <span class="accent">Intelligent</span>
-      </span>
-      <span class="line">
-        <span class="grey">AI</span>
-        <span class="hero__pill"><canvas id="hc2" width="92" height="70"></canvas></span>
-        Systems
-      </span>
-      <span class="line">
-        <span class="grey">based in</span> HYD,
-        <span class="hero__pill"><canvas id="hc3" width="92" height="70"></canvas></span>
-        <span class="accent">India</span>
-      </span>
-    </h1>
-
-    <p class="hero__sub">
-      I build production-grade AI systems, GenAI pipelines, and backend infrastructure — fast, clean, and built to scale.
-    </p>
-
-    <a href="#works" class="hero__btn">
-      View Projects <span class="arrow">→</span>
-    </a>
-
-    <!-- 3D floating project cards — drawn by Canvas API in script.js -->
-    <div class="hero__3d-wrap">
-      <canvas id="hero3d"></canvas>
-    </div>
-
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       TECH STACK MARQUEE
-  ════════════════════════════════════════════ -->
-  <div class="tech-marquee">
-    <div style="overflow:hidden">
-      <div class="tech-marquee__track">
-        <span class="tech-marquee__item">Python<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">PyTorch<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">TensorFlow<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">FastAPI<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">LangChain<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">LlamaIndex<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">Pinecone<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">PostgreSQL<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">MongoDB<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">Docker<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">AWS<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">MLflow<span class="tech-marquee__sep">/</span></span>
-        <!-- duplicate for seamless loop -->
-        <span class="tech-marquee__item">Python<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">PyTorch<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">TensorFlow<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">FastAPI<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">LangChain<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">LlamaIndex<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">Pinecone<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">PostgreSQL<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">MongoDB<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">Docker<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">AWS<span class="tech-marquee__sep">/</span></span>
-        <span class="tech-marquee__item">MLflow<span class="tech-marquee__sep">/</span></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       DIAGONAL RIBBON TICKERS
-       Two banners crossing diagonally — one red,
-       one black — scrolling in opposite directions.
-  ════════════════════════════════════════════ -->
-  <div class="ribbons">
-    <div class="ribbon ribbon--red">
-      <div class="ribbon__inner">
-        <span class="ribbon__item">AI Engineering <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">RAG Pipelines <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">LLM Fine-tuning <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">GenAI Systems <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">FastAPI Backend <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">MLOps <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">AI Engineering <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">RAG Pipelines <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">LLM Fine-tuning <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">GenAI Systems <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">FastAPI Backend <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">MLOps <span class="ribbon__star">✦</span></span>
-      </div>
-    </div>
-    <div class="ribbon ribbon--black">
-      <div class="ribbon__inner">
-        <span class="ribbon__item">B.Tech CSE @ SRM Trichy <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">Graduating 2027 <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">CGPA ~8.0 <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">Open to Internships <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">Chennai, India <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">Production-first Builder <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">B.Tech CSE @ SRM Trichy <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">Graduating 2027 <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">CGPA ~8.0 <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">Open to Internships <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">HYD, India <span class="ribbon__star">✦</span></span>
-        <span class="ribbon__item">Production-first Builder <span class="ribbon__star">✦</span></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       HELLO / INTRO
-  ════════════════════════════════════════════ -->
-  <section class="hello">
-    <span class="hello__label">(hello)</span>
-    <h2 class="hello__heading reveal">
-      I build fast-moving AI systems and backend infrastructure — with clarity, speed, and <span class="grey">no drama.</span>
-    </h2>
-    <div class="hello__pills reveal d1">
-      <span class="hello__pill">🤖 AI Engineering</span>
-      <span class="hello__pill">🔗 GenAI</span>
-      <span class="hello__pill">⚡ FastAPI</span>
-      <span class="hello__pill">📚 RAG Pipelines</span>
-      <span class="hello__pill">🧠 LLMs</span>
-      <span class="hello__pill">🐳 MLOps</span>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       TESTIMONIALS
-  ════════════════════════════════════════════ -->
-  <section class="testimonials">
-    <!-- Ghost watermark text (large faded behind content) -->
-    <div class="ghost-title">Testimonials</div>
-
-    <div class="testimonials__inner">
-      <span class="eyebrow reveal">(Why people love working with KKS Suhith Babu)</span>
-
-      <div class="testimonials__grid reveal">
-
-        <!-- Stats column -->
-        <div class="testi-stats">
-          <div>
-            <div class="testi-stat__num">5+</div>
-            <div class="testi-stat__label">Projects Shipped</div>
-          </div>
-          <div>
-            <div class="testi-stat__num">100%</div>
-            <div class="testi-stat__label">Production mindset</div>
-          </div>
-          <div>
-            <div class="testi-stat__num">2027</div>
-            <div class="testi-stat__label">Full-time ready</div>
-          </div>
-        </div>
-
-        <!-- Carousel column -->
-        <div>
-          <div class="testi-carousel__outer">
-            <div class="testi-carousel__track" id="testiTrack">
-
-              <div class="testi-slide">
-                <canvas id="tc1"></canvas>
-                <div class="testi-slide__body">
-                  <div class="testi-slide__num">01 / 03</div>
-                  <div class="testi-slide__quote">"ClinicalMind shows a rare blend of empathy and engineering — building AI for real-world rural impact, not just demos."</div>
-                  <div>
-                    <span class="testi-slide__name">Prof. K. Ramesh</span>
-                    <span class="testi-slide__role">Faculty Mentor · SRM Trichy</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="testi-slide">
-                <canvas id="tc2"></canvas>
-                <div class="testi-slide__body">
-                  <div class="testi-slide__num">02 / 03</div>
-                  <div class="testi-slide__quote">"The LLM fine-tuning pipeline was production-level — proper MLflow tracking, LoRA adapters, clean API design. Not student work."</div>
-                  <div>
-                    <span class="testi-slide__name">Aakash Mehta</span>
-                    <span class="testi-slide__role">Senior ML Engineer · Bangalore</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="testi-slide">
-                <canvas id="tc3"></canvas>
-                <div class="testi-slide__body">
-                  <div class="testi-slide__num">03 / 03</div>
-                  <div class="testi-slide__quote">"His approach: ship fast, iterate faster. The risk predictor dashboard was clean and production-ready within days."</div>
-                  <div>
-                    <span class="testi-slide__name">Priya Nair</span>
-                    <span class="testi-slide__role">Startup Founder · Chennai</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="testi-nav">
-            <button class="nav-btn" id="tPrev">←</button>
-            <button class="nav-btn" id="tNext">→</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       RECENT WORKS
-  ════════════════════════════════════════════ -->
-  <section class="works" id="works">
-    <span class="works__ghost">(Why clients love KKS Suhith Babu)</span>
-    <div style="font-size:clamp(68px,11vw,148px);font-weight:700;color:rgba(0,0,0,.05);white-space:nowrap;line-height:1.1;letter-spacing:-.03em;padding:0 40px;display:block;margin-bottom:-6px;pointer-events:none;">Recent Works</div>
-
-    <div class="works__carousel">
-      <div class="works__track" id="worksTrack">
-
-        <!-- WORK 1 -->
-        <div class="work-card">
-          <div class="work-card__left">
-            <p class="work-card__desc">Building AI that works under real-world constraints — multilingual, offline, deployed for impact.</p>
-            <div>
-              <div class="work-card__num">01 / 05</div>
-              <div class="work-card__name">ClinicalMind</div>
-            </div>
-          </div>
-          <div class="work-card__visual"><canvas id="wc1"></canvas></div>
-          <div class="work-card__meta">
-            <div class="meta-group"><label>YEAR</label><div class="big">2025</div></div>
-            <div class="meta-group"><label>ROLE</label><div class="sm">Sole Builder</div></div>
-            <div class="meta-group">
-              <label>TECH STACK</label>
-              <ul>
-                <li>FastAPI + GPT-4o Vision</li>
-                <li>LlamaIndex + Pinecone</li>
-                <li>Whisper ASR</li>
-                <li>React PWA (Offline-first)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- WORK 2 -->
-        <div class="work-card">
-          <div class="work-card__left">
-            <p class="work-card__desc">ML-powered risk prediction with a full production stack — JWT auth, dashboards, and explainability.</p>
-            <div>
-              <div class="work-card__num">02 / 05</div>
-              <div class="work-card__name">AI Risk Predictor</div>
-            </div>
-          </div>
-          <div class="work-card__visual"><canvas id="wc2"></canvas></div>
-          <div class="work-card__meta">
-            <div class="meta-group"><label>YEAR</label><div class="big">2025</div></div>
-            <div class="meta-group"><label>ROLE</label><div class="sm">Full-Stack ML Engineer</div></div>
-            <div class="meta-group">
-              <label>TECH STACK</label>
-              <ul>
-                <li>Random Forest + XGBoost</li>
-                <li>FastAPI + JWT Auth</li>
-                <li>React + Recharts</li>
-                <li>PostgreSQL</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- WORK 3 -->
-        <div class="work-card">
-          <div class="work-card__left">
-            <p class="work-card__desc">Scalable LLM fine-tuning infrastructure with LoRA, experiment tracking, and versioned serving endpoints.</p>
-            <div>
-              <div class="work-card__num">03 / 05</div>
-              <div class="work-card__name">LLM Pipeline</div>
-            </div>
-          </div>
-          <div class="work-card__visual"><canvas id="wc3"></canvas></div>
-          <div class="work-card__meta">
-            <div class="meta-group"><label>YEAR</label><div class="big">2024</div></div>
-            <div class="meta-group"><label>ROLE</label><div class="sm">ML Engineer</div></div>
-            <div class="meta-group">
-              <label>TECH STACK</label>
-              <ul>
-                <li>PyTorch + LoRA/QLoRA</li>
-                <li>MLflow Tracking</li>
-                <li>Hugging Face Hub</li>
-                <li>Docker + AWS EC2</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- WORK 4 -->
-        <div class="work-card">
-          <div class="work-card__left">
-            <p class="work-card__desc">Conversational AI interview coach with real-time STAR scoring, voice mode, and adaptive difficulty.</p>
-            <div>
-              <div class="work-card__num">04 / 05</div>
-              <div class="work-card__name">AI Mock Interviewer</div>
-            </div>
-          </div>
-          <div class="work-card__visual"><canvas id="wc4"></canvas></div>
-          <div class="work-card__meta">
-            <div class="meta-group"><label>YEAR</label><div class="big">2024</div></div>
-            <div class="meta-group"><label>ROLE</label><div class="sm">AI Builder</div></div>
-            <div class="meta-group">
-              <label>TECH STACK</label>
-              <ul>
-                <li>LangChain + GPT-4o</li>
-                <li>Whisper + TTS</li>
-                <li>FastAPI + React</li>
-                <li>MongoDB</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- WORK 5 -->
-        <div class="work-card">
-          <div class="work-card__left">
-            <p class="work-card__desc">Computer vision + ML for intelligent traffic signal management with real-time density analysis.</p>
-            <div>
-              <div class="work-card__num">05 / 05</div>
-              <div class="work-card__name">Smart Traffic AI</div>
-            </div>
-          </div>
-          <div class="work-card__visual"><canvas id="wc5"></canvas></div>
-          <div class="work-card__meta">
-            <div class="meta-group"><label>YEAR</label><div class="big">2024</div></div>
-            <div class="meta-group"><label>ROLE</label><div class="sm">ML Engineer</div></div>
-            <div class="meta-group">
-              <label>TECH STACK</label>
-              <ul>
-                <li>YOLOv8 + OpenCV</li>
-                <li>Scikit-learn + Pandas</li>
-                <li>FastAPI Dashboard</li>
-                <li>NumPy Analytics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="works__nav">
-      <button class="nav-btn" id="wPrev">←</button>
-      <button class="nav-btn" id="wNext">→</button>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       SERVICES / SKILLS
-  ════════════════════════════════════════════ -->
-  <section class="services" id="services">
-    <h2 class="services__title reveal">What I do</h2>
-
-    <div class="svc-tabs reveal">
-      <button class="svc-tab active" onclick="switchTab(this,'svc1')">
-        <span class="svc-tab__dot"></span>AI Engineering
+  <header class="site-header" id="top">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="KKS Suhith Babu, home">KKS<span>.</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span>
       </button>
-      <button class="svc-tab" onclick="switchTab(this,'svc2')">
-        <span class="svc-tab__dot"></span>Backend Systems
-      </button>
-      <button class="svc-tab" onclick="switchTab(this,'svc3')">
-        <span class="svc-tab__dot"></span>MLOps
-      </button>
-    </div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="mailto:kocherlasravan@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-    <div class="svc-panel active" id="svc1">
-      <div class="svc-panel__bg-text">AI Engineering × AI Engineering × AI Engineering ×</div>
-      <div class="svc-panel__content">
-        <div>
-          <h3 class="svc-panel__heading">AI Engineering</h3>
-          <p class="svc-panel__desc">Building intelligent systems from RAG pipelines to multimodal AI apps — using LangChain, LlamaIndex, GPT-4o Vision, Whisper, and fine-tuned models for production use cases.</p>
-          <ul class="svc-panel__list">
-            <li>RAG Pipelines with LlamaIndex &amp; Pinecone</li>
-            <li>LLM Fine-tuning (LoRA, QLoRA, PEFT)</li>
-            <li>Multimodal AI — Vision + Audio + Text</li>
-            <li>Conversational AI &amp; Agentic Systems</li>
-            <li>Vector Search &amp; Semantic Retrieval</li>
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="status-pill reveal"><span aria-hidden="true"></span> AI Engineer Intern at BitApps · April 2026—Present</p>
+        <p class="hero-kicker reveal">AI Engineer Intern at BitApps <span>/</span> AI &amp; Backend Developer</p>
+        <h1 id="hero-title" class="reveal">Engineering practical <em>AI systems</em>, reliable backend services, and developer-focused tools.</h1>
+        <p class="hero-summary reveal">I am KKS Suhith Babu, an AI Engineer Intern at BitApps and a Computer Science undergraduate at SRM Institute of Science and Technology. I build practical AI applications, Python backend APIs, model-evaluation systems, automation workflows and reliable software solutions using Python, FastAPI, PyTorch, RAG and Docker.</p>
+        <div class="hero-actions reveal" aria-label="Portfolio actions">
+          <a class="button button-primary" href="#projects">View Projects <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="#experience">View Experience</a>
+          <a class="button button-secondary resume-link" href="resumes/kks-suhith-babu-ai-ml-resume.pdf" download data-resume>AI/ML Resume <span aria-hidden="true">⇩</span></a>
+          <a class="button button-secondary resume-link" href="resumes/kks-suhith-babu-backend-swe-resume.pdf" download data-resume>Python Backend/SWE Resume <span aria-hidden="true">⇩</span></a>
+          <a class="text-link" href="https://www.linkedin.com/in/kocherlakoteswarasuhithsravanbabu/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://github.com/Kocherlasuhith12" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <aside class="hero-aside reveal" aria-label="Profile overview">
+        <div class="portrait-stage" id="portrait-stage">
+          <span class="portrait-word" aria-hidden="true">KKS</span>
+          <div class="portrait-frame">
+            <img src="assets/suhith-portrait.jpg" width="1048" height="789" alt="Portrait of KKS Suhith Babu" fetchpriority="high" decoding="async">
+          </div>
+          <span class="portrait-line" aria-hidden="true"></span>
+          <span class="portrait-orbit" aria-hidden="true">AI · BACKEND · BUILD · TEST ·</span>
+        </div>
+        <div class="hero-aside-grid">
+          <div><span>Based in</span><strong>India</strong></div>
+          <div><span>Graduating</span><strong>2027</strong></div>
+          <div><span>Focus</span><strong>AI + Backend</strong></div>
+          <div><span>Available</span><strong>June 2027</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="opportunity shell" aria-label="Experience, availability and education overview">
+      <article class="overview-card overview-card--light reveal">
+        <p class="eyebrow">Current experience</p>
+        <h2>AI Engineer Intern</h2>
+        <p>Currently working at BitApps, where I contribute to AI-assisted software development, backend integrations, workflow automation, software testing and practical engineering solutions. My work focuses on understanding how intelligent systems are designed, integrated, evaluated and improved for real-world use.</p>
+        <dl class="compact-meta">
+          <div><dt>Organisation</dt><dd>BitApps</dd></div>
+          <div><dt>Duration</dt><dd>April 2026 – Present</dd></div>
+        </dl>
+      </article>
+
+      <article class="overview-card overview-card--accent reveal">
+        <p class="eyebrow">Selective roles &amp; collaborations</p>
+        <h2>Open to Opportunities</h2>
+        <p>Open to selective opportunities in AI engineering, backend development, applied machine learning and AI-assisted software systems where I can contribute, learn and build meaningful products.</p>
+        <ul class="check-list">
+          <li>Generative AI and RAG applications</li>
+          <li>Python and FastAPI backend services</li>
+          <li>AI model evaluation and code-quality analysis</li>
+          <li>Workflow automation and API integrations</li>
+          <li>Testing, debugging and Docker deployment</li>
+        </ul>
+        <a class="button button-dark" href="#projects">Explore My Work <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="overview-card overview-card--dark reveal">
+        <p class="eyebrow">Graduating in 2027</p>
+        <h2>B.Tech Computer Science</h2>
+        <p>Computer Science and Engineering undergraduate at SRM Institute of Science and Technology, developing strong foundations across artificial intelligence, backend engineering, software development and applied machine learning.</p>
+        <dl class="compact-meta">
+          <div><dt>Academic period</dt><dd>September 2023 – May 2027</dd></div>
+          <div><dt>Full-time availability</dt><dd>June 2027</dd></div>
+        </dl>
+      </article>
+
+      <article class="overview-card overview-card--cream reveal">
+        <p class="eyebrow">Career direction</p>
+        <h2>AI + Backend</h2>
+        <p>Preparing for full-time opportunities in AI engineering, backend development, machine learning systems and software engineering after graduation.</p>
+        <ul class="check-list">
+          <li>Generative AI and LLM applications</li>
+          <li>Python and FastAPI backend systems</li>
+          <li>REST APIs, microservices and databases</li>
+          <li>Model evaluation and intelligent automation</li>
+          <li>Testing, Docker and deployment workflows</li>
+        </ul>
+        <a class="button button-primary" href="https://www.linkedin.com/in/kocherlakoteswarasuhithsravanbabu/" target="_blank" rel="noopener noreferrer">Connect Early <span aria-hidden="true">↗</span></a>
+      </article>
+    </section>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="shell">
+        <header class="section-header reveal">
+          <p class="eyebrow">01 / Selected work</p>
+          <h2 id="projects-title">Projects built around <em>real engineering problems.</em></h2>
+          <p>Six focused builds across applied AI, model evaluation, Python backend services, intelligent systems and data workflows.</p>
+        </header>
+        <div class="project-grid">
+          <article class="project-card project-card--featured reveal">
+            <div class="project-index">01</div>
+            <div>
+              <p class="project-kind">Healthcare AI · Active development</p>
+              <h3>ClinicalMind — AI Diagnostic Support Co-Pilot</h3>
+              <p>Building an AI-assisted clinical support tool for rural healthcare workers in India. The project is designed around text, voice and clinical-image inputs, a FastAPI backend, retrieval-grounded medical guidance and an offline-first React interface. I am currently implementing the agent-based diagnostic workflow and integrating the system components; ClinicalMind remains an active work in progress and is not intended to replace qualified medical judgement.</p>
+            </div>
+            <ul class="tag-list" aria-label="Technologies"><li>Python</li><li>FastAPI</li><li>React</li><li>RAG</li><li>LlamaIndex</li><li>Pinecone</li><li>Docker</li><li>AI Agents</li></ul>
+            <a class="project-link" href="https://github.com/Kocherlasuhith12/Clinical-mind" target="_blank" rel="noopener noreferrer">View work in progress on GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">02</div>
+            <div>
+              <p class="project-kind">LLM engineering · MLOps</p>
+              <h3>Scalable LLM Fine-Tuning Pipeline</h3>
+              <p>Designed an end-to-end pipeline for parameter-efficient fine-tuning of large language models using LoRA and QLoRA. Integrated MLflow for experiment tracking, model versioning, hyperparameter logging and reproducibility, while Docker provided a consistent execution environment across development setups.</p>
+            </div>
+            <ul class="tag-list" aria-label="Technologies"><li>Python</li><li>PyTorch</li><li>Hugging Face</li><li>LoRA</li><li>QLoRA</li><li>MLflow</li><li>Docker</li></ul>
+            <a class="project-link" href="https://github.com/Kocherlasuhith12/scalable-llm-finetuning-pipeline" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">03</div>
+            <div>
+              <p class="project-kind">Evaluation · Software quality</p>
+              <h3>CodeEval — AI-Generated Code Evaluation Suite</h3>
+              <p>Developed a structured benchmarking framework for evaluating AI-generated programming solutions across correctness, runtime efficiency, readability and edge-case coverage. Automated tests and AST-based analysis identify recursion errors, unreachable code, inefficient complexity, unused variables and incomplete validation.</p>
+            </div>
+            <ul class="tag-list" aria-label="Technologies"><li>Python</li><li>AST Parsing</li><li>pytest</li><li>Unit Testing</li><li>Code Analysis</li></ul>
+            <a class="project-link" href="https://github.com/Kocherlasuhith12" target="_blank" rel="noopener noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">04</div>
+            <div>
+              <p class="project-kind">Competition AI · IIT Patna Apeiron Fest 2026</p>
+              <h3>CRITICALMASS — Adversarial AI Game Bot</h3>
+              <p>Engineered an official Critical Mass challenge submission using Minimax, Alpha-Beta pruning, iterative deepening and phase-aware evaluation strategies. The bot recorded 30 wins across 30 benchmark games and passed the tournament testing suite under strict execution-time constraints.</p>
+            </div>
+            <ul class="tag-list" aria-label="Technologies"><li>Python</li><li>NumPy</li><li>Minimax</li><li>Alpha-Beta</li><li>Iterative Deepening</li><li>Game Theory</li></ul>
+            <a class="project-link" href="https://github.com/Kocherlasuhith12/CRITICALMASS" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">05</div>
+            <div>
+              <p class="project-kind">Machine learning · Full stack</p>
+              <h3>Smart Risk AI</h3>
+              <p>Built a machine-learning platform for project-risk prediction using a Random Forest classifier, feature engineering, cross-validation and model evaluation. Developed a FastAPI backend and interactive frontend for submitting project information, receiving predictions and visualising model-driven indicators.</p>
+            </div>
+            <ul class="tag-list" aria-label="Technologies"><li>Python</li><li>scikit-learn</li><li>Random Forest</li><li>FastAPI</li><li>React</li><li>Recharts</li></ul>
+            <a class="project-link" href="https://github.com/Kocherlasuhith12/smart-risk-ai2" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">06</div>
+            <div>
+              <p class="project-kind">Forecasting · Data engineering</p>
+              <h3>TrafficIQ — Smart Traffic Management System</h3>
+              <p>Built a data-driven traffic management and forecasting system using large-scale traffic sensor records, feature engineering, XGBoost and LSTM-based prediction. Developed processing pipelines for outlier handling, normalisation and time-based feature extraction, with an interactive interface for traffic insights.</p>
+            </div>
+            <ul class="tag-list" aria-label="Technologies"><li>Python</li><li>Pandas</li><li>scikit-learn</li><li>XGBoost</li><li>LSTM</li><li>Streamlit</li><li>TypeScript</li></ul>
+            <a class="project-link" href="https://github.com/Kocherlasuhith12/TrafficIQ-Smart_Traffic_Management_System" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="shell experience-grid">
+        <header class="section-header section-header--sticky reveal">
+          <p class="eyebrow">02 / Experience</p>
+          <h2 id="experience-title">Learning how complete software systems <em>work together.</em></h2>
+          <p>Practical exposure across AI, backend integrations, automation, testing and local development environments.</p>
+        </header>
+        <article class="experience-card reveal">
+          <div class="experience-topline"><span>Current role</span><span>April 2026 – Present</span></div>
+          <h3>AI Engineer Intern</h3>
+          <p class="company">BitApps</p>
+          <p class="experience-intro">Working across AI-assisted development, backend integrations, workflow automation, testing and developer-oriented engineering tasks. Gaining practical experience in connecting intelligent systems with APIs, automation platforms, testing frameworks and local development environments.</p>
+          <ul class="responsibility-list">
+            <li>Contributing to AI-assisted software development and backend integration workflows.</li>
+            <li>Working with Python, FastAPI, REST APIs, webhooks and developer-focused automation systems.</li>
+            <li>Exploring workflow and reliability technologies such as n8n, Temporal and Restate through local development environments.</li>
+            <li>Configuring and running Docker-based services for development, integration testing and debugging.</li>
+            <li>Developing and executing automated feature tests using Playwright and pytest.</li>
+            <li>Validating frontend behaviour, API connectivity, authentication flows and feature-level requirements.</li>
+            <li>Diagnosing unreachable services, incorrect responses, environment configuration problems and edge-case failures.</li>
+            <li>Documenting technical findings, test outcomes, implementation challenges and troubleshooting steps.</li>
+            <li>Building a stronger understanding of how AI, backend, automation and testing components work together within a complete software system.</li>
           </ul>
-          <div class="svc-panel__tags">
-            <span class="svc-tag">LangChain</span>
-            <span class="svc-tag">LlamaIndex</span>
-            <span class="svc-tag">GPT-4o</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="shell">
+        <header class="section-header reveal">
+          <p class="eyebrow">03 / Technical toolkit</p>
+          <h2 id="skills-title">Tools I use to move from <em>idea to tested system.</em></h2>
+        </header>
+        <div class="skills-grid">
+          <article class="skill-card reveal"><span>01</span><h3>Artificial Intelligence &amp; LLMs</h3><p>Python · PyTorch · scikit-learn · XGBoost · Hugging Face Transformers · LangChain · OpenAI API · RAG Pipelines · LoRA · QLoRA · Prompt Engineering · Model Evaluation · LlamaIndex · Pinecone</p></article>
+          <article class="skill-card reveal"><span>02</span><h3>Python Backend Engineering</h3><p>Python · FastAPI · REST APIs · API Integrations · Webhooks · Authentication Flows · Async Workflows · Service Debugging</p></article>
+          <article class="skill-card reveal"><span>03</span><h3>Automation &amp; Integration</h3><p>Webhooks · API Connectivity · n8n · Temporal · Restate · Local Development Environments · Workflow Debugging</p></article>
+          <article class="skill-card reveal"><span>04</span><h3>Data &amp; Retrieval</h3><p>Pandas · NumPy · Pinecone · Vector Search · Data Processing · Feature Engineering · PostgreSQL Fundamentals · Redis Fundamentals</p></article>
+          <article class="skill-card reveal"><span>05</span><h3>Testing &amp; Software Quality</h3><p>Playwright · pytest · Unit Testing · Integration Testing · API Testing · Postman · Debugging · Edge-Case Analysis · Code Review · Test Automation</p></article>
+          <article class="skill-card reveal"><span>06</span><h3>DevOps &amp; Engineering Tools</h3><p>Docker · Docker Compose · Git · GitHub · MLflow · AWS Fundamentals · Jupyter Notebook · Google Colab · Pandas · NumPy · Streamlit</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="shell about-grid">
+        <div class="about-title reveal">
+          <p class="eyebrow">04 / About</p>
+          <h2 id="about-title">Curious about intelligence. Serious about <em>reliability.</em></h2>
+          <div class="about-stamp" aria-hidden="true"><span>KKS</span><small>AI + BACKEND<br>CLASS OF 2027</small></div>
+        </div>
+        <div class="about-copy reveal">
+          <p class="lead">I am a Computer Science and Engineering undergraduate at SRM Institute of Science and Technology, graduating in 2027, and currently working as an AI Engineer Intern at BitApps.</p>
+          <p>My interests lie at the intersection of artificial intelligence, backend engineering and reliable software development. I enjoy building systems that bring together machine learning models, intelligent workflows, backend APIs, databases, testing frameworks and deployment tools into complete and practical applications.</p>
+          <p>My technical experience is centred on Python, FastAPI, PyTorch, scikit-learn, Hugging Face, LangChain, RAG pipelines, Docker, MLflow, data processing and integrating AI systems with APIs and practical user interfaces.</p>
+          <p>Alongside development, I am particularly interested in AI model evaluation, code-quality analysis, prompt engineering, edge-case identification, test-driven development and improving the reliability of AI-generated outputs.</p>
+          <p>I approach every project with an emphasis on practical usefulness, measurable results, maintainable code, structured testing and clear documentation.</p>
+          <dl class="education-details">
+            <div><dt>Degree</dt><dd>B.Tech in Computer Science and Engineering</dd></div>
+            <div><dt>Institution</dt><dd>SRM Institute of Science and Technology, Tiruchirappalli</dd></div>
+            <div><dt>Academic period</dt><dd>September 2023 – May 2027</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section achievements" id="achievements" aria-labelledby="achievements-title">
+      <div class="shell">
+        <header class="section-header reveal">
+          <p class="eyebrow">05 / Achievements</p>
+          <h2 id="achievements-title">Competition work and <em>continued learning.</em></h2>
+        </header>
+        <ol class="achievement-list">
+          <li class="reveal"><time datetime="2026">2026</time><div><p class="achievement-type">Official competition submission</p><h3>Critical Mass, IIT Patna Apeiron Fest 2026</h3><p>Official competition submission with a 30/30 benchmark game record.</p></div><span aria-hidden="true">01</span></li>
+          <li class="reveal"><time datetime="2024-04">Apr 2024</time><div><p class="achievement-type">Coursera</p><h3>Deep Learning with PyTorch: Image Segmentation</h3><p>Completed a guided course focused on image segmentation workflows using PyTorch.</p></div><span aria-hidden="true">02</span></li>
+          <li class="reveal"><time datetime="2024-02">Feb 2024</time><div><p class="achievement-type">E-Cell, IIT Hyderabad</p><h3>E-Summit 2024 Data Science Workshop</h3><p>Participated in the data science workshop held during E-Summit 2024.</p></div><span aria-hidden="true">03</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section resumes" id="resumes" aria-labelledby="resumes-title">
+      <div class="shell resume-shell">
+        <header class="section-header reveal">
+          <p class="eyebrow">06 / Resumes</p>
+          <h2 id="resumes-title">Choose the version that fits <em>the conversation.</em></h2>
+        </header>
+        <div class="resume-grid">
+          <article class="resume-card reveal"><span class="resume-icon" aria-hidden="true">AI</span><div><h3>AI/ML Resume</h3><p>For AI Engineer, Machine Learning, LLM, model-evaluation and applied AI roles.</p></div><a class="button button-primary resume-link" href="resumes/kks-suhith-babu-ai-ml-resume.pdf" download data-resume><span aria-hidden="true">⇩</span> Download AI/ML Resume</a></article>
+          <article class="resume-card reveal"><span class="resume-icon" aria-hidden="true">PY</span><div><h3>Python Backend/SWE Resume</h3><p>For Python backend, FastAPI, API integration, testing and software engineering roles.</p></div><a class="button button-primary resume-link" href="resumes/kks-suhith-babu-backend-swe-resume.pdf" download data-resume><span aria-hidden="true">⇩</span> Download Python Backend/SWE Resume</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">07 / Contact</p>
+          <h2 id="contact-title">Let’s Build Something <em>Meaningful.</em></h2>
+          <p>I am open to thoughtful conversations around AI engineering, backend development, machine learning systems, internships, research collaborations and practical software projects.</p>
+          <div class="contact-links">
+            <a href="mailto:kocherlasravan@gmail.com"><span>Email</span>kocherlasravan@gmail.com <b aria-hidden="true">↗</b></a>
+            <a href="https://www.linkedin.com/in/kocherlakoteswarasuhithsravanbabu/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span>Connect professionally <b aria-hidden="true">↗</b></a>
+            <a href="https://github.com/Kocherlasuhith12" target="_blank" rel="noopener noreferrer"><span>GitHub</span>Explore the code <b aria-hidden="true">↗</b></a>
           </div>
         </div>
-        <div class="svc-panel__visual"><canvas id="sc1"></canvas></div>
-      </div>
-    </div>
-
-    <div class="svc-panel" id="svc2">
-      <div class="svc-panel__bg-text">Backend × Backend × Backend × Backend ×</div>
-      <div class="svc-panel__content">
-        <div>
-          <h3 class="svc-panel__heading">Backend Engineering</h3>
-          <p class="svc-panel__desc">Designing scalable Python-first backend systems with FastAPI — from JWT auth and REST APIs to PostgreSQL, MongoDB, async workflows, and containerised deployments.</p>
-          <ul class="svc-panel__list">
-            <li>FastAPI REST APIs with Async Support</li>
-            <li>PostgreSQL + MongoDB Database Design</li>
-            <li>JWT Authentication &amp; RBAC</li>
-            <li>Docker Containerisation</li>
-            <li>AWS EC2, S3, Lambda Deployments</li>
-          </ul>
-          <div class="svc-panel__tags">
-            <span class="svc-tag">FastAPI</span>
-            <span class="svc-tag">PostgreSQL</span>
-            <span class="svc-tag">Docker</span>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" minlength="2" required><span class="field-error" aria-live="polite"></span></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><span class="field-error" aria-live="polite"></span></div>
           </div>
-        </div>
-        <div class="svc-panel__visual"><canvas id="sc2"></canvas></div>
+          <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" minlength="3" required><span class="field-error" aria-live="polite"></span></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="6" minlength="10" required></textarea><span class="field-error" aria-live="polite"></span></div>
+          <input class="honeypot" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="button button-primary submit-button" type="submit">Send Message <span aria-hidden="true">↗</span></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
-    </div>
+    </section>
+  </main>
 
-    <div class="svc-panel" id="svc3">
-      <div class="svc-panel__bg-text">MLOps × MLOps × MLOps × MLOps ×</div>
-      <div class="svc-panel__content">
-        <div>
-          <h3 class="svc-panel__heading">MLOps &amp; ML Engineering</h3>
-          <p class="svc-panel__desc">End-to-end ML lifecycle — from data pipelines and experiment tracking to model versioning, performance monitoring, and CI/CD for ML systems.</p>
-          <ul class="svc-panel__list">
-            <li>Experiment Tracking with MLflow</li>
-            <li>Scikit-learn, XGBoost, PyTorch Pipelines</li>
-            <li>Model Versioning &amp; A/B Testing</li>
-            <li>Feature Engineering — Pandas &amp; NumPy</li>
-            <li>Computer Vision with YOLOv8 &amp; OpenCV</li>
-          </ul>
-          <div class="svc-panel__tags">
-            <span class="svc-tag">MLflow</span>
-            <span class="svc-tag">PyTorch</span>
-            <span class="svc-tag">YOLOv8</span>
-          </div>
-        </div>
-        <div class="svc-panel__visual"><canvas id="sc3"></canvas></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       MEET SUHITH
-  ════════════════════════════════════════════ -->
-  <section class="meet" id="about">
-    <span class="meet__ghost">Meet KKS Suhith Babu</span>
-    <div class="meet__grid">
-
-      <div class="meet__photo reveal">
-        <canvas id="meetCanvas"></canvas>
-        <div class="meet__photo-socials">
-          <a href="#" class="social-icon">𝕏</a>
-          <a href="#" class="social-icon">in</a>
-          <a href="#" class="social-icon">gh</a>
-        </div>
-        <div class="meet__badge">
-          <div class="meet__badge-text">
-            <span style="font-size:18px">⚡</span>
-            <span>SINCE</span>
-            <span>2023</span>
-            <span>BUILDER</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal d1">
-        <span class="meet__subtitle">The Builder</span>
-        <h2 class="meet__name">KKS Suhith Babu</h2>
-        <p class="meet__bio">
-          Kocherla Koteswara Suhith Sravan Babu is a B.Tech CSE student at SRM Institute of Science and Technology, Trichy (graduating 2027), building a career as an AI Engineer with strong backend engineering skills. He works at the intersection of intelligent systems and production-grade software — from RAG pipelines and LLM fine-tuning to FastAPI backends and MLOps infrastructure.
-          <br><br>
-          Approach: ship fast, build clean, iterate relentlessly.
-        </p>
-        <div class="timeline">
-          <div class="timeline__row">
-            <div><div class="timeline__role">Founder · ClinicalMind AI</div><div class="timeline__org">AI Diagnostic Co-pilot for Rural Healthcare, India</div></div>
-            <div class="timeline__year">2025–Now</div>
-          </div>
-          <div class="timeline__row">
-            <div><div class="timeline__role">Builder · LLM Fine-tuning Pipeline</div><div class="timeline__org">Scalable Training Infrastructure — Self-built</div></div>
-            <div class="timeline__year">2025</div>
-          </div>
-          <div class="timeline__row">
-            <div><div class="timeline__role">Full-Stack ML · AI Risk Predictor</div><div class="timeline__org">FastAPI + React + ML Dashboard System</div></div>
-            <div class="timeline__year">2025</div>
-          </div>
-          <div class="timeline__row">
-            <div><div class="timeline__role">B.Tech CSE · SRM Trichy</div><div class="timeline__org">Computer Science &amp; Engineering · CGPA ~8.0</div></div>
-            <div class="timeline__year">2023–2027</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       AWARDS / CERTIFICATIONS
-  ════════════════════════════════════════════ -->
-  <section class="awards" id="awards">
-    <span class="eyebrow">(Awards)</span>
-    <h2 class="awards__title reveal">Awards Winning</h2>
-    <div class="awards__list">
-
-      <div class="award-row reveal">
-        <div class="award-row__platform">Coursera</div>
-        <div>
-          <div class="award-row__title">Deep Learning Specialization</div>
-          <div class="award-row__sub">Neural Networks, CNNs, RNNs — Andrew Ng</div>
-        </div>
-        <div class="award-row__arrow">↗</div>
-        <div class="award-row__pill">↗</div>
-      </div>
-
-      <div class="award-row reveal d1">
-        <div class="award-row__platform">Hugging Face</div>
-        <div>
-          <div class="award-row__title">NLP with Transformers</div>
-          <div class="award-row__sub">BERT, GPT, T5 Fine-tuning &amp; Deployment</div>
-        </div>
-        <div class="award-row__arrow">↗</div>
-        <div class="award-row__pill">↗</div>
-      </div>
-
-      <div class="award-row reveal d2">
-        <div class="award-row__platform">AWS</div>
-        <div>
-          <div class="award-row__title">Cloud Practitioner Foundation</div>
-          <div class="award-row__sub">EC2, S3, Lambda, RDS, IAM Fundamentals</div>
-        </div>
-        <div class="award-row__arrow">↗</div>
-        <div class="award-row__pill">↗</div>
-      </div>
-
-      <div class="award-row reveal d3">
-        <div class="award-row__platform">GitHub</div>
-        <div>
-          <div class="award-row__title">Open Source Contributions</div>
-          <div class="award-row__sub">AI Tools, FastAPI Extensions &amp; ML Utilities</div>
-        </div>
-        <div class="award-row__arrow">↗</div>
-        <div class="award-row__pill">↗</div>
-      </div>
-
-      <div class="award-row reveal">
-        <div class="award-row__platform">SRM Trichy</div>
-        <div>
-          <div class="award-row__title">B.Tech CSE · CGPA 8.0+</div>
-          <div class="award-row__sub">Computer Science &amp; Engineering · Class of 2027</div>
-        </div>
-        <div class="award-row__arrow">↗</div>
-        <div class="award-row__pill">↗</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       PRICING / COLLABORATION
-  ════════════════════════════════════════════ -->
-  <section class="pricing" id="pricing">
-    <span class="eyebrow pricing__eyebrow">(Collaboration)</span>
-    <h2 class="pricing__title reveal">Explore Options</h2>
-    <div class="pricing__stack">
-
-      <div class="price-card reveal">
-        <div>
-          <div class="price-card__icon">⚡</div>
-          <div class="price-card__name">Internship / Contract</div>
-          <p class="price-card__desc">Ideal for startups or teams needing an AI/Backend engineer for a sprint, POC, or feature build.</p>
-          <div class="price-card__delivery"><span>Duration</span><span>1–3 months</span></div>
-        </div>
-        <div class="price-card__right">
-          <div class="price-card__amount">Free</div>
-          <span class="price-card__period">Actively seeking stipend / unpaid internships</span>
-          <ul class="price-card__features">
-            <li>AI/ML model development</li>
-            <li>FastAPI backend APIs</li>
-            <li>RAG pipeline setup</li>
-          </ul>
-          <a href="#contact" class="price-card__cta price-card__cta--dark">Get In Touch →</a>
-        </div>
-      </div>
-
-      <div class="price-card price-card--dark reveal d1">
-        <div>
-          <div class="price-card__icon">🎯</div>
-          <div class="price-card__name">Full-time · 2027</div>
-          <p class="price-card__desc">Targeting full-time AI/ML engineering positions post-graduation — production systems, LLMOps, backend-strong roles.</p>
-          <div class="price-card__delivery"><span>Available</span><span>June 2027</span></div>
-        </div>
-        <div class="price-card__right">
-          <div style="font-size:16px;color:rgba(255,255,255,.4);margin-bottom:6px">Starting at</div>
-          <div class="price-card__amount price-card__amount--accent">Full-time</div>
-          <span class="price-card__period">AI Engineer role — India</span>
-          <ul class="price-card__features">
-            <li>GenAI &amp; LLM systems at scale</li>
-            <li>MLOps pipeline engineering</li>
-            <li>Python-first backend architecture</li>
-          </ul>
-          <a href="#contact" class="price-card__cta price-card__cta--ghost">Connect Early →</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       FAQ
-  ════════════════════════════════════════════ -->
-  <section class="faq">
-    <span class="eyebrow">(FAQs)</span>
-    <h2 class="faq__title reveal">Your Questions, Answered</h2>
-    <p class="faq__sub reveal">Everything you need to know about working with Suhith.</p>
-
-    <div class="faq__grid">
-      <div>
-        <div class="faq-item reveal">
-          <button class="faq-item__btn" onclick="toggleFaq(this)">
-            What's your core tech stack?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer"><p>Python-first: FastAPI, PyTorch/TensorFlow, LangChain/LlamaIndex, Pinecone, PostgreSQL/MongoDB, Docker, AWS, MLflow, and React/TypeScript for dashboards.</p></div>
-        </div>
-        <div class="faq-item open reveal d1">
-          <button class="faq-item__btn" onclick="toggleFaq(this)">
-            Available for internships now?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer"><p>Yes! Actively seeking AI/ML or Backend internships for 2025–2026. Open to remote, hybrid, or on-site roles in India. Reach out below.</p></div>
-        </div>
-        <div class="faq-item reveal d2">
-          <button class="faq-item__btn" onclick="toggleFaq(this)">
-            What kind of projects do you build?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer"><p>Production-grade AI systems — RAG pipelines, fine-tuned LLMs, computer vision apps, FastAPI backends, and full-stack ML dashboards that work in the real world.</p></div>
-        </div>
-      </div>
-      <div>
-        <div class="faq-item reveal">
-          <button class="faq-item__btn" onclick="toggleFaq(this)">
-            How fast can you deliver?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer"><p>POCs in 1–2 weeks. Production systems in 4–8 weeks. I move fast, iterate quickly, and communicate clearly throughout.</p></div>
-        </div>
-        <div class="faq-item reveal d1">
-          <button class="faq-item__btn" onclick="toggleFaq(this)">
-            Open to open-source collaboration?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer"><p>Absolutely. I'm open to collaborating on AI tools, developer utilities, and backend infrastructure projects. Find me on GitHub or via the form below.</p></div>
-        </div>
-        <div class="faq-item reveal d2">
-          <button class="faq-item__btn" onclick="toggleFaq(this)">
-            What's your long-term goal?
-            <span class="faq-item__icon">+</span>
-          </button>
-          <div class="faq-item__answer"><p>Becoming a senior AI Engineer at a top-tier tech company or AI-first startup in India. Building toward this through real projects, not just coursework.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       CONTACT
-  ════════════════════════════════════════════ -->
-  <section class="contact" id="contact">
-    <span class="contact__ghost">Let's Connect</span>
-
-    <div class="contact__card reveal">
-      <div class="contact__left">
-        <!-- Canvas drawn by contactCanvas() in script.js -->
-        <canvas id="contactBgCanvas"></canvas>
-        <div class="contact__left-blur"></div>
-        <div class="contact__left-text">
-          <h2>Got a project<br>in mind?</h2>
-          <p>Let's make something intelligent happen together</p>
-        </div>
-      </div>
-      <div class="contact__right">
-        <h3>Send a Message</h3>
-        <p class="sub">I respond within 24 hours, usually faster.</p>
-        <div class="form-group">
-          <label class="form-label">YOUR NAME</label>
-          <input class="form-input" type="text" placeholder="e.g. Priya Sharma" />
-        </div>
-        <div class="form-group">
-          <label class="form-label">YOUR EMAIL</label>
-          <input class="form-input" type="email" placeholder="you@company.com" />
-        </div>
-        <div class="form-group">
-          <label class="form-label">MESSAGE</label>
-          <textarea class="form-textarea" placeholder="Tell me about the project, role, or idea..."></textarea>
-        </div>
-        <button class="form-submit" onclick="submitForm(this)">Send Now!</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ EMAIL TICKER ═══ -->
-  <div class="email-ticker">
-    <div class="email-ticker__track">
-      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
-      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
-      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
-      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
-      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
-      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
-      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
-      <span class="email-ticker__item">kocherlasravan@email.com<span class="email-ticker__sep">✦</span></span>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════════════ -->
   <footer class="footer">
-    <!-- Radial red gradient — exact Agero footer style -->
-    <div class="footer__grad"></div>
-
-    <div class="footer__grid">
-      <div>
-        <div class="footer__brand-name">KKS Suhith Babu<span class="dot">.</span></div>
-        <p class="footer__brand-desc">AI Engineer &amp; Backend Builder based in HYD, India. Building production-grade AI systems.</p>
+    <div class="shell footer-grid">
+      <div><a class="footer-brand" href="#top">KKS Suhith Babu<span>.</span></a><p>AI Engineer Intern at BitApps<br>AI and Backend Developer<br>B.Tech Computer Science and Engineering · Class of 2027</p></div>
+      <div class="footer-socials" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/kocherlakoteswarasuhithsravanbabu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+        <a href="https://github.com/Kocherlasuhith12" target="_blank" rel="noopener noreferrer" aria-label="GitHub">gh</a>
+        <a href="mailto:kocherlasravan@gmail.com" aria-label="Email">@</a>
       </div>
-      <div class="footer__col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#works">Works</a></li>
-          <li><a href="#services">Skills</a></li>
-          <li><a href="#awards">Recognition</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Social</h4>
-        <ul>
-          <li><a href="#">Twitter(X)</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">GitHub</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Legals</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> KKS Suhith Babu</span><a href="#top">Back to top ↑</a></div>
     </div>
-
-    <div class="footer__bottom">
-      <p class="footer__copy">© 2025 KKS Suhith Babu. All rights reserved.</p>
-      <div class="footer__clock">HYD → <span id="footerClock">00:00:00</span></div>
-      <a href="#hero" class="footer__top">Back to top ↑</a>
-    </div>
-
-    <!-- Giant outlined name at the very bottom -->
-    <span class="footer__wordmark">KKS Suhith Babu</span>
   </footer>
-
-  <!-- Script loaded at end so DOM is ready -->
-  <script src="script.js"></script>
-
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

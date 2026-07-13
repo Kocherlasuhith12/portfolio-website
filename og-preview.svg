@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">KKS Suhith Babu portfolio</title>
+  <desc id="description">AI Engineer Intern at BitApps and AI and Backend Developer</desc>
+  <rect width="1200" height="630" fill="#f3efe7"/>
+  <rect x="46" y="46" width="1108" height="538" rx="32" fill="#fffaf1" stroke="#cfc4b6"/>
+  <circle cx="1008" cy="182" r="118" fill="#e44628"/>
+  <text x="1008" y="211" text-anchor="middle" fill="#fffaf1" font-family="Georgia,serif" font-style="italic" font-size="82">KKS</text>
+  <text x="90" y="130" fill="#e44628" font-family="Arial,sans-serif" font-size="18" letter-spacing="3">AI ENGINEER INTERN AT BITAPPS</text>
+  <text x="90" y="238" fill="#171512" font-family="Arial,sans-serif" font-weight="700" font-size="70">Engineering practical</text>
+  <text x="90" y="322" fill="#171512" font-family="Arial,sans-serif" font-weight="700" font-size="70">AI + backend systems.</text>
+  <text x="90" y="420" fill="#6d675f" font-family="Arial,sans-serif" font-size="28">KKS Suhith Babu</text>
+  <text x="90" y="466" fill="#6d675f" font-family="Arial,sans-serif" font-size="22">AI &amp; Backend Developer · B.Tech CSE · Class of 2027</text>
+  <rect x="90" y="510" width="190" height="8" rx="4" fill="#e44628"/>
+</svg>
