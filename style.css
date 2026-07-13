@@ -228,6 +228,7 @@ em { color: var(--red); font-family: var(--serif); font-weight: 500; }
 .footer-grid p { margin: 20px 0 0; color: rgba(255,255,255,.48); font-size: 12px; }
 .footer-socials { display: flex; gap: 10px; }
 .footer-socials a { display: grid; width: 45px; height: 45px; place-items: center; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; font-size: 12px; transition: color .2s ease, background .2s ease, transform .2s ease; }
+.footer-socials svg { width: 18px; height: 18px; fill: currentColor; }
 .footer-socials a:hover { color: var(--ink); background: var(--white); transform: translateY(-3px); }
 .footer-bottom { display: flex; grid-column: 1 / -1; justify-content: space-between; padding-top: 25px; border-top: 1px solid rgba(255,255,255,.13); color: rgba(255,255,255,.38); font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
 .toast { position: fixed; z-index: 200; right: 22px; bottom: 22px; max-width: 360px; padding: 14px 18px; color: var(--white); background: var(--ink); border-left: 4px solid var(--red); border-radius: 10px; box-shadow: var(--shadow); font-size: 12px; opacity: 0; pointer-events: none; transform: translateY(15px); transition: opacity .2s ease, transform .2s ease; }
