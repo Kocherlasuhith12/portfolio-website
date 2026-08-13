@@ -19,6 +19,8 @@
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 body {
   margin: 0;
+  position: relative;
+  overflow-x: hidden;
   color: var(--ink);
   background: var(--paper);
   font-family: var(--sans);
@@ -238,7 +240,91 @@ em { color: var(--red); font-family: var(--serif); font-weight: 500; }
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1); }
 .js .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* Ambient Background Blobs & Layout Lines */
+.bg-blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+.blob {
+  position: absolute;
+  width: min(600px, 45vw);
+  height: min(600px, 45vw);
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.11;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.blob-1 {
+  top: -5%;
+  left: -10%;
+  background: var(--red);
+  animation: float-blob-1 25s ease-in-out infinite alternate;
+}
+.blob-2 {
+  top: 20%;
+  right: -10%;
+  background: #ded3c4;
+  animation: float-blob-2 20s ease-in-out infinite alternate;
+}
+.blob-3 {
+  top: 50%;
+  left: -5%;
+  background: var(--red-dark);
+  animation: float-blob-3 30s ease-in-out infinite alternate;
+}
+.blob-4 {
+  top: 75%;
+  right: -5%;
+  background: var(--paper-deep);
+  animation: float-blob-1 28s ease-in-out infinite alternate-reverse;
+}
+@keyframes float-blob-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(80px, 60px) scale(1.15); }
+  100% { transform: translate(-30px, 100px) scale(0.9); }
+}
+@keyframes float-blob-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-100px, -60px) scale(0.85); }
+  100% { transform: translate(50px, 80px) scale(1.1); }
+}
+@keyframes float-blob-3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(70px, -90px) scale(1.15); }
+  100% { transform: translate(-50px, 40px) scale(0.9); }
+}
+
+.layout-lines {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 1180px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.line-left, .line-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+  opacity: 0.35;
+}
+.line-left { left: 24px; }
+.line-right { right: 24px; }
+
 @media (max-width: 980px) {
+  .layout-lines { display: none; }
   .shell { width: min(100% - 36px, 780px); }
   .nav { grid-template-columns: auto 1fr auto; }
   .nav-toggle { display: block; justify-self: end; }
